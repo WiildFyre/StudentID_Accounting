@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student Payment System</title>
+        <link rel="stylesheet" href="theStyle.css">
+    <script src="ScriptV3.js"></script>
+    </head>
+    
+    <body onload="pageLoad()">
+
+        <table name="mainTable" width="100%" border="10" style="border-color: red;" >
+            <!-- outermost table -->
+            <!-- outermost table first Row-->
+            <tr>
+                <td colspan="2" align="center"><h1> STUDENT ID ACCOUNTING SYSTEM</h1> </td>
+            </tr>
+            <!-- outermost table Second Row-->
+            <tr>    
+                <!-- First menu side Box-->
+                <td width="20%">
+                    <table name="menuTable">
+                        <tr><td><a href="#" onclick="showStudent()">Student </a> </td></tr>
+                        <tr><td><a href="#" onclick="showDepartment()">Department </a></td></tr>
+                    </table>
+                </td>
+                 <!-- Body side Box-->
+               <td width="80%" id="normal"  >
+                    <table name="rightBox2" width="100%" id="DepartmentSideBox" >
+                        <tr> <!--first row of department box-->
+                        <td> 
+                            <div name="Vendor Details" width = "100%" background-color="red" >
+                                <table>
+                                    <tr>
+                                        <td>Vendor Name</td>
+                                        <td>Vendor ID</td>
+                                    </tr>
+                                    <tr>
+                                         <td>Vendor 1</td>
+                                        <td>1</td>  
+                                     </tr>
+                                </table>
+                            </div>
+
+                            <table name="PaymentsReceived" width="800px">
+                                <tr>
+                                    <td>Payer Id</td>
+                                    <td>Paid Amount</td>
+                                </tr>
+                                <tr>
+                                    <td> BDS0044 </td>
+                                    <td> 5000 </td>
+                                </tr>
+                                <tr>
+                                    <td> BDS0044 </td>
+                                    <td> 5000 </td>
+                                </tr>
+                                <tr>
+                                    <td> BDS0044 </td>
+                                    <td> 5000 </td>
+                                </tr>
+                                <tr>
+                                    <td> BDS0044 </td>
+                                    <td> 5000 </td>
+                                </tr>
+                                <tr>
+                                    <td> BDS0044 </td>
+                                    <td> 5000 </td>
+                                </tr>
+                            </table>
+                        </td>
+                        </tr>
+                    </table>
+                    <table name="rigthBox" width="100%"id="StudentSideBox" >
+                        <tr>
+                        <td > <button type="button" onclick="addRow()" >Deposit Amount</button> </td>
+                        
+                        </tr>
+                        <tr> 
+                        <td > <input type="number"  id="depAmt" > </td>
+                        
+                        </tr>
+                        <tr><td>
+                            <!-- rigth box first section form -->
+                        <table name="formTable" width="800px" >
+
+                            <tr><td>Student Information</td>
+
+                                <td> 23BDS0044 </td>
+
+                            </tr>
+                            <tr><td>Account Balance</td>
+                                <td id="stuBal"> 0 </td>
+                            </tr>
+                            <tr><td colspan="2" align="center"> <b>History of transactions </b></td></tr>
+                                <tr><td colspan="2" align="center">
+                                        <input type="radio" name="tranType" id="tranType" value="Deposit" onclick="transSelect('deposit')">Deposit
+                                        <input type="radio" name="tranType" id="tranType" value="Expense" onclick="transSelect('expense')">Expense
+                                    </td>
+                                </tr>
+                        </table> <!--end of form table-->
+                    </td></tr>
+                    <!-- right box second Section History data -->
+                    <tr><td>
+                        <!-- Start of History of deposit section this will play hide and seek -->
+                        <div id ="historyDataDepositSection" overflow-y:auto>
+                        <table id="historyDataDeposit"  width="100%">
+                            <tr width="100%"> 
+                                <td width="70%"> Date </td>
+                                <td width="10%"> Type </td>
+                                <td width="10%"> Transaction Via </td>
+                                <td width="10%"> Amount </td>
+                            </tr>
+                        </table>
+                        </div> <!-- End of history Data Deposit-->
+                        <div id ="historyDataExpenseSection" style = "display:none" >
+                            <table name="historyDataExpense" style = "background-color:yellowgreen" width="100%">
+                                <tr style = "background-color:yellowgreen">
+                                    <td> Date </td>
+                                    <td> Transaction Type</td>
+                                    <td> Transaction Desc</td>
+                                    <td> Amount </td>
+                                </tr>
+                                <tr>
+                                    <td> "15-07-2005" </td>
+                                    <td> Spend</td>
+                                    <td> Enzo</td>
+                                    <td> 500 </td>
+                                </tr>
+                                <tr>
+                                    <td> "15-06-2005" </td>
+                                    <td> Spend</td>
+                                    <td> Laundry</td>
+                                    <td> 5000 </td>
+                                </tr>
+                                <tr>
+                                    <td> "15-06-2005" </td>
+                                    <td> Spend</td>
+                                    <td> Pizza</td>
+                                    <td> 5000 </td>
+                                </tr>
+                                
+                            </table>
+                            <!-- end of history of expense-->
+                    </td></tr>
+                         <!-- outermost table third Row-->
+                          <tr><td><p id="msg" style = "background:yellow"></p></td></tr>            
+           </tr>     
+                          </table>
+        
+    
+
+
+    </body>
+
+</html>
